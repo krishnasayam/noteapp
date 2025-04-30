@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Notes App</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            // Add your Firebase project configuration here
+            apiKey: "AIzaSyDH_xoDp3Bu1cykMxOgsaQfF35Awr6EpCU",
+            authDomain: "cloud-notes-app-52eaa.firebaseapp.com",
+            projectId: "cloud-notes-app-52eaa",
+            storageBucket: "cloud-notes-app-52eaa.appspot.com",
+            messagingSenderId: "1013702062777",
+            appId: "1:1013702062777:web:4a05c27c0a04f51cf2a168"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Cloud Notes App</h1>
+            <div id="user-info">
+                <span id="user-name"></span>
+                <button id="logout-btn" style="display: none;">Logout</button>
+            </div>
+        </header>
+        
+        <main>
+            <div id="auth-container">
+                <h2>Login / Register</h2>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button id="login-btn">Login</button>
+                <button id="register-btn">Register</button>
+            </div>
+
+            <div id="notes-container" style="display: none;">
+                <h2>Your Notes</h2>
+                <textarea id="note-input" placeholder="Write your note here..."></textarea>
+                <button id="save-note-btn">Save Note</button>
+                <ul id="notes-list"></ul>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>
